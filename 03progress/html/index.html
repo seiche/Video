@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Drag and Drop</title>
+		<meta charset='utf-8'/>
+		<link rel="stylesheet" href="style.css"/>
+		<script src="client.js"></script>
+		<script src="websocket.js"></script>
+	</head>
+	<body>
+		<section>
+			<h2>Convert Files</h2>
+			<p>Drag video files into this page to upload them and
+			automatically convert them into a browser-friendly format.</p>
+			<label>Filename:</label>
+			<p id="filename"></p>
+			<progress id="progress" value="0" min="0" max="100">0</progress>
+			<br>
+			<label>360p Progress:</label>
+			<progress id="360p" value="0" min="0" max="100">0</progress>
+			<a id="360link"></a>
+			<br>
+			<label>480p Progress:</label>
+			<progress id="480p" value="0" min="0" max="100">0</progress>
+			<a id="480link"></a>
+			<br>
+			<label>720p Progress:</label>
+			<progress id="720p" value="0" min="0" max="100">0</progress>
+			<a id="720link"></a>
+			<br>
+			<b id="complete"></b>
+		</section>
+	</body>
+</html>
