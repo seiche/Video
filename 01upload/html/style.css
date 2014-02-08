@@ -1,0 +1,54 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: tahoma;
+}
+
+html{
+	height: 100%;
+	background-color: #DDD;
+}
+
+body{
+	height: 100%;
+}
+
+.space{
+	width: 100%;
+	height: 2%;
+}
+
+.content{
+	width: 80%;
+	background-color: #FFF;
+	border-radius: 5px;
+	display: block;
+	margin: auto;
+	padding-bottom: 40px;
+}
+
+.inner{
+	width: 80%;
+	height: 100%;
+	display: block;
+	margin: auto;
+}
+
+#drop{
+	min-width: 500px;
+	width: 80%;
+	height: 400px;
+	display: block;
+	margin: auto;
+	border: 1px dotted #000;
+}
+
+#progress{
+	width: 80%;
+	display: block;
+	margin: auto;
+}
+
+.hover{
+	background-color: rgba(255, 255, 0, 0.3);
+}
