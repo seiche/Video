@@ -67,9 +67,12 @@ WebSocket.on('request', function(request){
 
 var rez = ['360p', '480p', '720p'];
 function convert(srcfile, dest, input){
-	if(input <= rez.length){
-		var proc = new ffmpeg ({ source : uppath})
-		.usingPreset('360p.js')
+	console.log('Convert called');
+	if(input < rez.length){
+		var filepath = dest+rez[input]+'.mp4';
+		console.log('Converting to ' + filepath);
+		var proc = new ffmpeg ({source : srcfile})
+		.usingPreset(rez[input] + '.js')
 		.onProgress(function(progress){
 				if(client){
 					var send = {
@@ -79,11 +82,18 @@ function convert(srcfile, dest, input){
 					client.sendUTF(JSON.stringify(send));
 				}
 		})
-		.saveToFile('../data/'+dest+rez[input]+'.mp4', function(stdout, stderr){
+		.saveToFile('../data/' + filepath, function(stdout, stderr){
 			console.log(stdout);
 			console.log(stderr);
 			console.log('File converted successfully');
 			input++;
+			if(client){
+				var send = {
+					res : rez[input],
+					percent : 100,
+					link : "http://seichejs.com/projects/video/upload/data/" + filepath
+				}
+			}
 			convert(srcfile, dest, input);
 		});
 	}else{
