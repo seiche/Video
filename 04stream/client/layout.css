@@ -1,0 +1,14 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	background-color: #AAA;
+}
+
+video{
+	background-color: black;
+	display: block;
+	margin: auto;
+}
